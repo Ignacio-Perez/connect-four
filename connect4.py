@@ -312,6 +312,9 @@ def compareHeuristics(heuristic1, heuristic2,depth=4,verbose=False):
             state = algorithm2.minimax_decision_a_b(state,depth,state.player)
         if (verbose):
             print(state)
+    if state==None or state.winner==None:
+        return 0
+    return state.winner
              
 # Example:
 # compareHeuristics(ExtremelyNaiveHeuristic(),NonSoNaiveHeuristic(),5,True)             
