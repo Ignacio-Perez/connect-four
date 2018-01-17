@@ -173,10 +173,10 @@ class NonSoNaiveHeuristic(Heuristic):
                      for k in range(4):
                          line[k] = state.board[i+k*inc[0]][j+k*inc[1]]
                      if 1 in line and 2 not in line:
-                         value = sum(line)
+                         value = int(sum(line))
                          values[0][value-1]+=1
                      elif 2 in line and 1 not in line:
-                         value = sum(line)/2
+                         value = int(sum(line)/2)
                          values[1][value-1]+=1
         if player==1:
             if (state.player==2 and values[1][2]>0):
